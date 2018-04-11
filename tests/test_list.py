@@ -22,7 +22,7 @@ from __future__ import unicode_literals
 
 import itertools
 
-import libdnf.swdb
+import libdnf.transaction
 
 import dnf.transaction
 
@@ -59,7 +59,7 @@ class List(tests.support.DnfBaseTestCase):
 #            tsi = dnf.transaction.TransactionItem(
 #                dnf.transaction.INSTALL,
 #                installed=pkg,
-#                reason=libdnf.swdb.TransactionItemReason_USER
+#                reason=libdnf.transaction.TransactionItemReason_USER
 #            )
 #            tsis.append(tsi)
         self._swdb_commit(tsis)

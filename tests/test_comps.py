@@ -24,7 +24,7 @@ from __future__ import unicode_literals
 import operator
 
 import libcomps
-import libdnf.swdb
+import libdnf.transaction
 
 import dnf.comps
 import dnf.exceptions
@@ -192,20 +192,20 @@ class SolverGroupTest(tests.support.DnfBaseTestCase):
         tsis = []
 
         pkg1 = self.base.sack.query().filter(name="pepper", epoch=0, version="20", release="0", arch="x86_64")[0]
-        self.history.rpm.add_install(pkg1, reason=libdnf.swdb.TransactionItemReason_GROUP)
+        self.history.rpm.add_install(pkg1, reason=libdnf.transaction.TransactionItemReason_GROUP)
 #        tsi = dnf.transaction.TransactionItem(
 #            dnf.transaction.INSTALL,
 #            installed=pkg1,
-#            reason=libdnf.swdb.TransactionItemReason_GROUP
+#            reason=libdnf.transaction.TransactionItemReason_GROUP
 #        )
 #        tsis.append(tsi)
 
         pkg3 = self.base.sack.query().filter(name="tour", version="5", release="0", arch="noarch")[0]
-        self.history.rpm.add_install(pkg3, reason=libdnf.swdb.TransactionItemReason_GROUP)
+        self.history.rpm.add_install(pkg3, reason=libdnf.transaction.TransactionItemReason_GROUP)
 #        tsi = dnf.transaction.TransactionItem(
 #            dnf.transaction.INSTALL,
 #            installed=pkg3,
-#            reason=libdnf.swdb.TransactionItemReason_GROUP
+#            reason=libdnf.transaction.TransactionItemReason_GROUP
 #        )
 #        tsis.append(tsi)
 
