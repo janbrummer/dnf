@@ -418,7 +418,7 @@ class SwdbInterface(object):
             cmdline or "",
             int(misc.getloginuid())
             )
-        # TODO: store releasever
+        self.swdb.setReleasever(self.releasever)
         self._tid = tid
 
         return tid
